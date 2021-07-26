@@ -79,3 +79,6 @@ sudo ./install auto
    1. check the instance created
    1. copy public IP4 DNS
    1. open new tab: ec2-3-136-155-212.us-east-2.compute.amazonaws.com:3000
+   
+## References
+* installing docker on AMI Linux 2: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
