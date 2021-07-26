@@ -45,3 +45,37 @@ sudo ./install auto
    1. Launch
    1. Create new key pair
    1. Download key pair
+1. create CodeDeploy
+   1. search service deploy
+   1. CodeDeploy
+   1. Select Applications
+   1. Create Application
+      1. Application Name: express-app, Compute Platform: EC2/On-premises
+   1. next: create application
+   1. create deployment group
+      * dployment group name: express-app-group
+      * service role: CodeDeployRole
+      * Deployment Type: In-place
+      * Environment Configuration: Amazon EC2 Instances
+        * tag group: key = Name, Value = ExpressApp
+      * Load Balancing: Once instance so don't need
+1. create PipeLine
+   1. Choose PipeLine
+   1. create pipeline
+      * pipeline name: express-app-pipeline, default location
+   1. next
+   1. source, github 2
+   1. first time: connect to github
+   1. select repo and branch, output artifact format: default
+   1. build stage: none for this project
+   1. Add deploy stage: AWS CodeDeploy
+      Application Name: express-app, Application Group: express-app-group
+   1. verification
+      details and then events
+1. verify ec2 instances
+   1. search ec2
+   1. ec2
+   1. instances
+   1. check the instance created
+   1. copy public IP4 DNS
+   1. open new tab: ec2-3-136-155-212.us-east-2.compute.amazonaws.com:3000
